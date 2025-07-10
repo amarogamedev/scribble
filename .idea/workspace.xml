@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65c412ea-c27e-4620-a01c-97637d0bbb9a" name="Changes" comment="estrutura do projeto">
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/utils/index.ts" afterDir="false" />
+    <list default="true" id="65c412ea-c27e-4620-a01c-97637d0bbb9a" name="Changes" comment="finalizando configuração inicial do tailwindcss">
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/AppLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron.vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/electron.vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/assets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/assets/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.web.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.web.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/components/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752101098100</updated>
-      <workItem from="1752101099099" duration="3089000" />
+      <workItem from="1752101099099" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="setup do projeto">
       <option name="closed" value="true" />
@@ -97,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752102686968</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finalizando configuração inicial do tailwindcss">
+      <option name="closed" value="true" />
+      <created>1752104269243</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752104269243</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="setup do projeto" />
     <MESSAGE value="estrutura do projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="estrutura do projeto" />
+    <MESSAGE value="finalizando configuração inicial do tailwindcss" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalizando configuração inicial do tailwindcss" />
   </component>
 </project>

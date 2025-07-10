@@ -9,12 +9,14 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
-    ...(process.platform === 'linux' ? { icon } : {}),
+    center: true,
+    title: 'scribble!',
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
       contextIsolation: true
-    }
+    },
+    ...(process.platform === 'linux' ? { icon } : {})
   })
 
   mainWindow.on('ready-to-show', () => {
