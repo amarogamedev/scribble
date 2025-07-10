@@ -1,15 +1,11 @@
 import { atom } from 'jotai'
-import { NoteInfo } from '@shared/models'
+import { NoteContent, NoteInfo } from '@shared/models'
 import { unwrap } from 'jotai/utils'
 
 const loadNotes = async () => {
   const notes = await window.context.getNotes()
   return notes.sort((a, b) => b.lastEditTime - a.lastEditTime)
 }
-
-//region selected note index atom
-export const selectedNoteIndexAtom = atom<number | null>(null)
-//endregion
 
 //region notes atom
 const notesAtomAsync = atom<NoteInfo[] | Promise<NoteInfo[]>>(loadNotes())
@@ -44,6 +40,10 @@ export const selectedNoteAtom = unwrap(
 )
 //endregion
 
+//region selected note index atom
+export const selectedNoteIndexAtom = atom<number | null>(null)
+//endregion
+
 //region create note atom
 export const createEmptyNoteAtom = atom(null, (get, set) => {
   const notes = get(notesAtom)
@@ -72,6 +72,29 @@ export const deleteNoteAtom = atom(null, (get, set) => {
   set(
     notesAtom,
     notes.filter((note) => note.title !== notes[selectedNoteIndex].title)
+  )
+})
+//endregion
+
+//region save note atom
+export const saveNoteAtom = atom(null, async (get, set, newContent: NoteContent) => {
+  const notes = get(notesAtom)
+  const selectedNote = get(selectedNoteAtom)
+
+  if(!selectedNote || !notes) return
+
+  await window.context.writeNote(selectedNote.title, newContent)
+  set(
+    notesAtom,
+    notes.map((note) => {
+      if (note.title === selectedNote.title) {
+        return {
+          ...note,
+          lastEditTime: Date.now()
+        }
+      }
+      return note
+    })
   )
 })
 //endregion
