@@ -1,0 +1,77 @@
+import { atom } from 'jotai'
+import { NoteInfo } from '@shared/models'
+import { unwrap } from 'jotai/utils'
+
+const loadNotes = async () => {
+  const notes = await window.context.getNotes()
+  return notes.sort((a, b) => b.lastEditTime - a.lastEditTime)
+}
+
+//region selected note index atom
+export const selectedNoteIndexAtom = atom<number | null>(null)
+//endregion
+
+//region notes atom
+const notesAtomAsync = atom<NoteInfo[] | Promise<NoteInfo[]>>(loadNotes())
+export const notesAtom = unwrap(notesAtomAsync, (prev) => prev)
+//endregion
+
+//region selected notes atom
+const selectedNoteAtomAsync = atom(async (get) => {
+  const notes = get(notesAtom)
+  const selectedNoteIndex = get(selectedNoteIndexAtom)
+
+  if (selectedNoteIndex == null || !notes) {
+    return null
+  }
+
+  const selectedNote = notes[selectedNoteIndex]
+  const noteContent = await window.context.readNote(selectedNote.title)
+  return {
+    ...selectedNote,
+    content: noteContent
+  }
+})
+
+export const selectedNoteAtom = unwrap(
+  selectedNoteAtomAsync,
+  (prev) =>
+    prev ?? {
+      title: '',
+      content: '',
+      lastEditTime: Date.now()
+    }
+)
+//endregion
+
+//region create note atom
+export const createEmptyNoteAtom = atom(null, (get, set) => {
+  const notes = get(notesAtom)
+
+  if (!notes) return
+
+  const title = `Note ${notes.length + 1}`
+  const newNote: NoteInfo = {
+    title,
+    lastEditTime: Date.now()
+  }
+
+  set(selectedNoteIndexAtom, 0)
+  set(notesAtom, [newNote, ...notes.filter((note) => note.title !== newNote.title)])
+})
+//endregion
+
+//region delete note atom
+export const deleteNoteAtom = atom(null, (get, set) => {
+  const notes = get(notesAtom)
+  const selectedNoteIndex = get(selectedNoteIndexAtom)
+
+  if (selectedNoteIndex == null || !notes) return
+
+  set(selectedNoteIndexAtom, null)
+  set(
+    notesAtom,
+    notes.filter((note) => note.title !== notes[selectedNoteIndex].title)
+  )
+})
+//endregion
