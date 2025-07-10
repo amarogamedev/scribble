@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65c412ea-c27e-4620-a01c-97637d0bbb9a" name="Changes" comment="finalizando configuração inicial do tailwindcss">
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/AppLayout.tsx" afterDir="false" />
+    <list default="true" id="65c412ea-c27e-4620-a01c-97637d0bbb9a" name="Changes" comment="layout do projeto">
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/button/ActionButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/button/ActionButtonsRow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/button/DeleteNoteButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/button/NewNoteButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/button/SourceCodeButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/components/button/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/assets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/assets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/components/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/components/AppLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/components/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,21 +25,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "amarogamedev"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;amarogamedev&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/amarogamedev/scribble.git",
-    "accountId": "d9425879-89dd-4653-a051-df8e31089962"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amarogamedev/scribble.git&quot;,
+    &quot;accountId&quot;: &quot;d9425879-89dd-4653-a051-df8e31089962&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2zeorP89HsnfRZMyKemQw6Xfpl0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,19 +50,24 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/amaroooxd/WebstormProjects/scribble",
+    "last_opened_file_path": "/home/amaroooxd/WebstormProjects/scribble/src/renderer/src/components/button",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/home/amaroooxd/WebstormProjects/scribble/node_modules/prettier",
     "ts.external.directory.path": "/home/amaroooxd/WebstormProjects/scribble/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/renderer/src/components/button" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -76,7 +86,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752101098100</updated>
-      <workItem from="1752101099099" duration="4701000" />
+      <workItem from="1752101099099" duration="4722000" />
+      <workItem from="1752144625554" duration="1164000" />
     </task>
     <task id="LOCAL-00001" summary="setup do projeto">
       <option name="closed" value="true" />
@@ -102,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752104269243</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="layout do projeto">
+      <option name="closed" value="true" />
+      <created>1752105810682</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752105810682</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +142,7 @@
     <MESSAGE value="setup do projeto" />
     <MESSAGE value="estrutura do projeto" />
     <MESSAGE value="finalizando configuração inicial do tailwindcss" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalizando configuração inicial do tailwindcss" />
+    <MESSAGE value="layout do projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout do projeto" />
   </component>
 </project>
