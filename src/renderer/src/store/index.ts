@@ -45,12 +45,13 @@ export const selectedNoteIndexAtom = atom<number | null>(null)
 //endregion
 
 //region create note atom
-export const createEmptyNoteAtom = atom(null, (get, set) => {
+export const createEmptyNoteAtom = atom(null, async (get, set) => {
   const notes = get(notesAtom)
-
   if (!notes) return
 
-  const title = `Note ${notes.length + 1}`
+  const title = await window.context.createNote()
+  if (!title) return
+
   const newNote: NoteInfo = {
     title,
     lastEditTime: Date.now()
@@ -62,16 +63,20 @@ export const createEmptyNoteAtom = atom(null, (get, set) => {
 //endregion
 
 //region delete note atom
-export const deleteNoteAtom = atom(null, (get, set) => {
+export const deleteNoteAtom = atom(null, async (get, set) => {
   const notes = get(notesAtom)
-  const selectedNoteIndex = get(selectedNoteIndexAtom)
+  const selectedNote = get(selectedNoteAtom)
 
-  if (selectedNoteIndex == null || !notes) return
+  if (selectedNote == null || !notes) return
+
+  const success = await window.context.deleteNote(selectedNote.title)
+
+  if (!success) return
 
   set(selectedNoteIndexAtom, null)
   set(
     notesAtom,
-    notes.filter((note) => note.title !== notes[selectedNoteIndex].title)
+    notes.filter((note) => note.title !== selectedNote.title)
   )
 })
 //endregion
@@ -81,7 +86,7 @@ export const saveNoteAtom = atom(null, async (get, set, newContent: NoteContent)
   const notes = get(notesAtom)
   const selectedNote = get(selectedNoteAtom)
 
-  if(!selectedNote || !notes) return
+  if (!selectedNote || !notes) return
 
   await window.context.writeNote(selectedNote.title, newContent)
   set(
