@@ -1,29 +1,29 @@
-# ✍️ Scribble
+# scribble!
 
-**Scribble** é um editor de Markdown simples, leve e elegante. Ideal para quem quer escrever, editar e visualizar Markdown de forma rápida e sem distrações.
+**scribble** é um editor de markdown simples, leve e elegante. ideal para quem quer escrever, editar e visualizar markdown de forma rápida e sem distrações.
 
-## 🚀 Funcionalidades
+## 🚀 funcionalidades
 
-- 📄 Edição em tempo real com visualização live do Markdown
-- 💡 Suporte aos principais recursos do Markdown:
-  - Cabeçalhos (`#`, `##`, etc.)
-  - Ênfase: *itálico*, **negrito**, ~~tachado~~
-  - Listas ordenadas e não ordenadas
-  - Citações e links
-- 💾 Salvamento automático (auto-save)
-- 🪶 Interface minimalista e responsiva
-- 📦 Empacotado como app desktop com Electron
+- 📄 edição em tempo real com visualização live do markdown
+- 💡 suporte aos principais recursos do Markdown:
+  - cabeçalhos (`#`, `##`, etc.)
+  - ênfase: *itálico*, **negrito**, ~~tachado~~
+  - listas ordenadas e não ordenadas
+  - citações e links
+- 💾 salvamento automático (auto-save)
+- 🪶 interface minimalista e responsiva
+- 📦 empacotado como app desktop com electron
 
-## 🧑‍💻 Tecnologias Utilizadas
+## 🧑‍💻 tecnologias utilizadas
 
-- [Electron](https://www.electronjs.org/)
-- [Jotai](https://jotai.org/)
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [MDX Editor](https://github.com/mdx-editor/editor)
+- [electron](https://www.electronjs.org/)
+- [jotai](https://jotai.org/)
+- [react](https://react.dev/)
+- [vite](https://vitejs.dev/)
+- [tailwind CSS](https://tailwindcss.com/)
+- [MDX editor](https://github.com/mdx-editor/editor)
 
-## 🛠️ Instalação
+## 🛠️ instalação
 
 ```bash
 git clone https://github.com/seu-usuario/scribble.git
