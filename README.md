@@ -28,5 +28,6 @@
 ```bash
 git clone https://github.com/seu-usuario/scribble.git
 cd scribble
+nvm use 24
 npm install
 npm run dev
