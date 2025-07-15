@@ -2,6 +2,8 @@
 
 **scribble** é um editor de markdown simples, leve e elegante. ideal para quem quer escrever, editar e visualizar markdown de forma rápida e sem distrações.
 
+<img width="931" height="762" alt="image" src="https://github.com/user-attachments/assets/cd88fab2-9941-4e55-8e98-0d4a87397faa" />
+
 ## 🚀 funcionalidades
 
 - 📄 edição em tempo real com visualização live do markdown
