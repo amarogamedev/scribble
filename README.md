@@ -1,34 +1,32 @@
-# scribble
+# ✍️ Scribble
 
-An Electron application with React and TypeScript
+**Scribble** é um editor de Markdown simples, leve e elegante. Ideal para quem quer escrever, editar e visualizar Markdown de forma rápida e sem distrações.
 
-## Recommended IDE Setup
+## 🚀 Funcionalidades
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- 📄 Edição em tempo real com visualização live do Markdown
+- 💡 Suporte aos principais recursos do Markdown:
+  - Cabeçalhos (`#`, `##`, etc.)
+  - Ênfase: *itálico*, **negrito**, ~~tachado~~
+  - Listas ordenadas e não ordenadas
+  - Citações e links
+- 💾 Salvamento automático (auto-save)
+- 🪶 Interface minimalista e responsiva
+- 📦 Empacotado como app desktop com Electron
 
-## Project Setup
+## 🧑‍💻 Tecnologias Utilizadas
 
-### Install
+- [Electron](https://www.electronjs.org/)
+- [Jotai](https://jotai.org/)
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [MDX Editor](https://github.com/mdx-editor/editor)
+
+## 🛠️ Instalação
 
 ```bash
-$ npm install
-```
-
-### Development
-
-```bash
-$ npm run dev
-```
-
-### Build
-
-```bash
-# For windows
-$ npm run build:win
-
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
+git clone https://github.com/seu-usuario/scribble.git
+cd scribble
+npm install
+npm run dev
